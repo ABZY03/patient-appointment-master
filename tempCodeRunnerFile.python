@@ -1,0 +1,13 @@
+import pandas as pd
+import numpy as np
+from scipy.stats import ttest_1samp, ttest_ind,  zscore,norm
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+#filtering dataset for smokers
+smokers_data = data[data['smoker'] == 'yes']
+
+#one-sample t-test
+t_stat, p_val=ttest_1samp(smokers_data['charges'],20000)
+print("T-Statictics:",t_stat)
+print("P-Value:",p_val)
